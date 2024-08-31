@@ -21,22 +21,24 @@ console.log('Какой ещё сервис тебе нужен?: '+ service2);
 let servicePrice2 = prompt('Сколько будет стоить этот второй сервис?');
 console.log('Сколько будет стоить этот второй сервис?: ' + servicePrice2);
 
-let fullPrice = Number(screenPrice) + Number(servicePrice1) + Number(servicePrice2);
+let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 console.log('Общая стоимость проекта: ' + fullPrice);
 
-let percentage = fullPrice * 0.3;
+let percentage = +(fullPrice * 0.3);
 console.log('Процент подрядчику/партнеру: ' + percentage);
 
 let servicePercentPrice = Math.round (fullPrice - percentage);
 console.log('Итого: ' + servicePercentPrice);
 
 
-if (fullPrice >= 50000) {
+if (fullPrice > 50000) {
   console.log('Скидка 10%');
-} else if (fullPrice >= 20000) {
+} else if (fullPrice > 20000 && fullPrice < 50000) {
   console.log('Скидка 5%');
-} else if (fullPrice >= 0) {
+} else if (fullPrice > 0 && fullPrice < 20000) {
   console.log('Скидка не предусмотрена');
-} else if (fullPrice <= -0) { 
+} else if (fullPrice < 0) { 
   console.log('Что-то пошло не так');
+} else if (fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) { 
+  console.log('Проверка на строгое равенство');
 }
