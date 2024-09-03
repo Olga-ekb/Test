@@ -96,4 +96,3 @@ return message
 
 rollbackMessage = getRollbackMessage();
 console.log('Скидка для клиента: ' + rollbackMessage);
-
